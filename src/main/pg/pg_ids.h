@@ -98,7 +98,10 @@
 // betaflight specific parameter group ids start at 500
 #define PG_BETAFLIGHT_START         500
 //#define PG_MODE_ACTIVATION_OPERATOR_CONFIG 500 removed
-#define PG_OSD_CONFIG               501
+#define PG_OSD_CONFIG
+
+#define PG_OSD_HUD_CONFIG PG_ID(PG_OSD_CONFIG, 13)
+               501
 #define PG_BEEPER_CONFIG            502
 #define PG_BEEPER_DEV_CONFIG        503
 #define PG_PID_CONFIG               504

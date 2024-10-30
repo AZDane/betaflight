@@ -1,3 +1,12 @@
+
+// HUD Configuration for angle markers
+PG_REGISTER_WITH_RESET_FN(osdHudConfig_t, osdHudConfig, PG_OSD_HUD_CONFIG, 1);
+
+void pgResetFn_osdHudConfig(osdHudConfig_t *instance) {
+    instance->hudAngleInterval = 30;  // Default to 30 degrees for angle markers
+}
+
+
 /*
  * This file is part of Cleanflight and Betaflight.
  *

@@ -2465,3 +2465,13 @@ bool osdElementsNeedAccelerometer(void)
 #endif // USE_ACC
 
 #endif // USE_OSD
+
+
+
+// Add HUD angle markers as selectable display option
+PG_REGISTER_WITH_RESET_FN(osdElementConfig_t, osdElementConfig, PG_OSD_ELEMENT_CONFIG, 1);
+
+// Default settings for osdElementConfig (if not already defined elsewhere)
+void pgResetFn_osdElementConfig(osdElementConfig_t *instance) {
+    instance->item_pos[OSD_HUD_ANGLE_MARKERS] = OSD_POS(10, 10);  // Default position for angle markers
+}

@@ -114,6 +114,7 @@ typedef enum {
     OSD_CROSSHAIRS,
     OSD_ARTIFICIAL_HORIZON,
     OSD_HORIZON_SIDEBARS,
+    OSD_HUD_ANGLE_MARKERS,  // New element for HUD angle markers
     OSD_ITEM_TIMER_1,
     OSD_ITEM_TIMER_2,
     OSD_FLYMODE,
@@ -413,3 +414,6 @@ void osdSetVisualBeeperState(bool state);
 statistic_t *osdGetStats(void);
 bool osdNeedsAccelerometer(void);
 int osdPrintFloat(char *buffer, char leadingSymbol, float value, char *formatString, unsigned decimalPlaces, bool round, char trailingSymbol);
+
+
+extern void renderHorizonWithMarkers(int pitch, int roll);

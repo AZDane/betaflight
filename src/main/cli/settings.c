@@ -139,6 +139,8 @@ const char * const lookupTableAccHardware[] = {
     "AUTO", "NONE", "ADXL345", "MPU6050", "MMA8452", "BMA280", "LSM303DLHC",
     "MPU6000", "MPU6500", "MPU9250", "ICM20601", "ICM20602", "ICM20608G", "ICM20649", "ICM20689", "ICM42605", "ICM42688P",
     "BMI160", "BMI270", "LSM6DSO", "LSM6DSV16X", "VIRTUAL"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 // sync with gyroHardware_e
@@ -146,36 +148,50 @@ const char * const lookupTableGyroHardware[] = {
     "AUTO", "NONE", "MPU6050", "L3G4200D", "MPU3050", "L3GD20",
     "MPU6000", "MPU6500", "MPU9250", "ICM20601", "ICM20602", "ICM20608G", "ICM20649", "ICM20689", "ICM42605", "ICM42688P",
     "BMI160", "BMI270", "LSM6DSO", "LSM6DSV16X", "VIRTUAL"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 #if defined(USE_SENSOR_NAMES) || defined(USE_BARO)
 // sync with baroSensor_e
 const char * const lookupTableBaroHardware[] = {
     "AUTO", "NONE", "BMP085", "MS5611", "BMP280", "LPS", "QMP6988", "BMP388", "DPS310", "2SMPB_02B", "LPS22DF", "VIRTUAL"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 #if defined(USE_SENSOR_NAMES) || defined(USE_MAG)
 // sync with magSensor_e
 const char * const lookupTableMagHardware[] = {
     "AUTO", "NONE", "HMC5883", "AK8975", "AK8963", "QMC5883", "LIS2MDL", "LIS3MDL", "MPU925X_AK8963", "IST8310"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 #if defined(USE_SENSOR_NAMES) || defined(USE_RANGEFINDER)
 const char * const lookupTableRangefinderHardware[] = {
     "NONE", "HCSR04", "TFMINI", "TF02"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
 const char * const lookupTableOffOn[] = {
     "OFF", "ON"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTableCrashRecovery[] = {
     "OFF", "ON" ,"BEEP", "DISARM"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTableUnit[] = {
     "IMPERIAL", "METRIC", "BRITISH"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTableAlignment[] = {
@@ -189,49 +205,69 @@ static const char * const lookupTableAlignment[] = {
     "CW180FLIP",
     "CW270FLIP",
     "CUSTOM",
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 #ifdef USE_MULTI_GYRO
 static const char * const lookupTableGyro[] = {
     "FIRST", "SECOND", "BOTH"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
 #ifdef USE_GPS
 static const char * const lookupTableGpsProvider[] = {
     "NMEA", "UBLOX", "MSP"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTableGpsSbasMode[] = {
     "AUTO", "EGNOS", "WAAS", "MSAS", "GAGAN", "NONE"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTableGpsUbloxModels[] = {
     "PORTABLE", "STATIONARY", "PEDESTRIAN", "AUTOMOTIVE", "AT_SEA", "AIRBORNE_1G", "AIRBORNE_2G", "AIRBORNE_4G"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTableGpsUbloxUtcStandard[] = {
     "AUTO", "USNO", "EU", "SU", "NTSC"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
 #ifdef USE_SERVOS
 static const char * const lookupTableGimbalMode[] = {
     "NORMAL", "MIXTILT"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
 #ifdef USE_BLACKBOX
 static const char * const lookupTableBlackboxDevice[] = {
     "NONE", "SPIFLASH", "SDCARD", "SERIAL"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTableBlackboxMode[] = {
     "NORMAL", "MOTOR_TEST", "ALWAYS"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTableBlackboxSampleRate[] = {
     "1/1", "1/2", "1/4", "1/8", "1/16"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
@@ -253,6 +289,8 @@ static const char * const lookupTableSerialRX[] = {
     "SRXL2",
     "GHST",
     "SPEK1024",
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
@@ -279,6 +317,8 @@ static const char * const lookupTableRxSpi[] = {
     "FRSKY_X_V2",
     "FRSKY_X_LBT_V2",
     "EXPRESSLRS",
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
@@ -289,6 +329,8 @@ static const char * const lookupTableGyroHardwareLpf[] = {
 #ifdef USE_GYRO_DLPF_EXPERIMENTAL
     "EXPERIMENTAL",
 #endif
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 #ifdef USE_CAMERA_CONTROL
@@ -296,6 +338,8 @@ static const char * const lookupTableCameraControlMode[] = {
     "HARDWARE_PWM",
     "SOFTWARE_PWM",
     "DAC"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
@@ -303,6 +347,8 @@ static const char * const lookupTablePwmProtocol[] = {
     "PWM", "ONESHOT125", "ONESHOT42", "MULTISHOT", "BRUSHED",
     "DSHOT150", "DSHOT300", "DSHOT600", "PROSHOT1000",
     "DISABLED"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTableLowpassType[] = {
@@ -310,6 +356,8 @@ static const char * const lookupTableLowpassType[] = {
     "BIQUAD",
     "PT2",
     "PT3",
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTableDtermLowpassType[] = {
@@ -317,14 +365,20 @@ static const char * const lookupTableDtermLowpassType[] = {
     "BIQUAD",
     "PT2",
     "PT3",
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTableFailsafe[] = {
     "AUTO-LAND", "DROP", "GPS-RESCUE"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTableFailsafeSwitchMode[] = {
     "STAGE1", "KILL", "STAGE2"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTableBusType[] = {
@@ -332,28 +386,38 @@ static const char * const lookupTableBusType[] = {
 #if defined(USE_SPI_GYRO) && defined(USE_I2C_GYRO)
     "GYROAUTO"
 #endif
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 #ifdef USE_MAX7456
 static const char * const lookupTableMax7456Clock[] = {
     "HALF", "NOMINAL", "DOUBLE"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
 #ifdef USE_RX_FRSKY_SPI
 static const char * const lookupTableFrskySpiA1Source[] = {
     "VBAT", "EXTADC", "CONST"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
 #ifdef USE_GYRO_OVERFLOW_CHECK
 static const char * const lookupTableGyroOverflowCheck[] = {
     "OFF", "YAW", "ALL"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
 static const char * const lookupTableRatesType[] = {
     "BETAFLIGHT", "RACEFLIGHT", "KISS", "ACTUAL", "QUICK"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 #ifdef USE_OVERCLOCK
@@ -366,76 +430,104 @@ static const char * const lookupOverclock[] = {
 #elif defined(STM32F7)
     "240MHZ"
 #endif
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
 #ifdef USE_LED_STRIP
     static const char * const lookupLedStripFormatRGB[] = {
         "GRB", "RGB", "GRBW"
-    };
+    
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
+};
 #endif
 
 const char * const lookupTableThrottleLimitType[] = {
     "OFF", "SCALE", "CLIP"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 #ifdef USE_GPS_RESCUE
 static const char * const lookupTableRescueSanityType[] = {
     "RESCUE_SANITY_OFF", "RESCUE_SANITY_ON", "RESCUE_SANITY_FS_ONLY"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 const char * const lookupTableRescueAltitudeMode[] = {
     "MAX_ALT", "FIXED_ALT", "CURRENT_ALT"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
 #if defined(USE_VIDEO_SYSTEM)
 static const char * const lookupTableVideoSystem[] = {
     "AUTO", "PAL", "NTSC", "HD"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
 #if defined(USE_ITERM_RELAX)
 const char * const lookupTableItermRelax[] = {
     "OFF", "RP", "RPY", "RP_INC", "RPY_INC"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 const char * const lookupTableItermRelaxType[] = {
     "GYRO", "SETPOINT"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
 #ifdef USE_ACRO_TRAINER
 static const char * const lookupTableAcroTrainerDebug[] = {
     "ROLL", "PITCH"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif // USE_ACRO_TRAINER
 
 #ifdef USE_RC_SMOOTHING_FILTER
 static const char * const lookupTableRcSmoothingDebug[] = {
     "ROLL", "PITCH", "YAW", "THROTTLE"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif // USE_RC_SMOOTHING_FILTER
 
 #ifdef USE_VTX_COMMON
 static const char * const lookupTableVtxLowPowerDisarm[] = {
     "OFF", "ON", "UNTIL_FIRST_ARM"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
 #ifdef USE_SDCARD
 static const char * const lookupTableSdcardMode[] = {
     "OFF", "SPI", "SDIO"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
 #ifdef USE_LAUNCH_CONTROL
 static const char * const lookupTableLaunchControlMode[] = {
     "NORMAL", "PITCHONLY", "FULL"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
 #ifdef USE_TPA_MODE
 static const char * const lookupTableTpaMode[] = {
     "PD", "D"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
@@ -443,10 +535,14 @@ static const char * const lookupTableTpaMode[] = {
 #ifdef USE_LED_STRIP_STATUS_MODE
 static const char * const lookupTableLEDProfile[] = {
     "RACE", "BEACON", "STATUS"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #else
 static const char * const lookupTableLEDProfile[] = {
     "RACE", "BEACON"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 #endif
@@ -466,48 +562,70 @@ const char * const lookupTableLedstripColors[COLOR_COUNT] = {
     "DARK_VIOLET",
     "MAGENTA",
     "DEEP_PINK"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTableGyroFilterDebug[] = {
     "ROLL", "PITCH", "YAW"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTablePositionAltitudeSource[] = {
     "DEFAULT", "BARO_ONLY", "GPS_ONLY"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char * const lookupTableOffOnAuto[] = {
     "OFF", "ON", "AUTO"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 const char* const lookupTableFeedforwardAveraging[] = {
     "OFF", "2_POINT", "3_POINT", "4_POINT"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char* const lookupTableDshotBitbangedTimer[] = {
     "AUTO", "TIM1", "TIM8"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 const char * const lookupTableOsdDisplayPortDevice[] = {
     "NONE", "AUTO", "MAX7456", "MSP", "FRSKYOSD"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 #ifdef USE_OSD
 static const char * const lookupTableOsdLogoOnArming[] = {
     "OFF", "ON", "FIRST_ARMING",
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 const char * const lookupTableSimplifiedTuningPidsMode[] = {
     "OFF", "RP", "RPY",
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 const char* const lookupTableMixerType[] = {
     "LEGACY", "LINEAR", "DYNAMIC", "EZLANDING",
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 #ifdef USE_OSD
 const char * const lookupTableCMSMenuBackgroundType[] = {
     "TRANSPARENT", "BLACK", "GRAY", "LIGHT_GRAY"
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
@@ -522,10 +640,14 @@ static const char* const lookupTableFreqDomain[] = {
 #if !defined(USE_RX_SX127X) && !defined(USE_RX_SX1280)
     "NONE",
 #endif
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 static const char* const lookupTableSwitchMode[] = {
     "WIDE", "HYBRID",
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 #endif
 
@@ -654,6 +776,8 @@ const lookupTableEntry_t lookupTables[] = {
     LOOKUP_TABLE_ENTRY(lookupTableFreqDomain),
     LOOKUP_TABLE_ENTRY(lookupTableSwitchMode),
 #endif
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 #undef LOOKUP_TABLE_ENTRY
@@ -1778,6 +1902,8 @@ const clivalue_t valueTable[] = {
     { "box_user_3_name", VAR_UINT8 | HARDWARE_VALUE | MODE_STRING, .config.string = { 1, MAX_BOX_USER_NAME_LENGTH, STRING_FLAGS_NONE }, PG_MODE_ACTIVATION_CONFIG, offsetof(modeActivationConfig_t, box_user_3_name) },
     { "box_user_4_name", VAR_UINT8 | HARDWARE_VALUE | MODE_STRING, .config.string = { 1, MAX_BOX_USER_NAME_LENGTH, STRING_FLAGS_NONE }, PG_MODE_ACTIVATION_CONFIG, offsetof(modeActivationConfig_t, box_user_4_name) },
 #endif
+
+    { "hud_angle_interval", VAR_UINT8 | MASTER_VALUE, .config.minmaxUnsigned = { 0, 90 }, PG_OSD_CONFIG, offsetof(osdConfig_t, hudAngleInterval) },
 };
 
 const uint16_t valueTableEntryCount = ARRAYLEN(valueTable);
